@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#7e22ce"/>
+    <title>Reiki para Vivir</title>
+
+    <!-- Tailwind CDN & Google Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes rotate { to { transform: rotate(360deg); } }
+        .animated-border-glow {
+            position: relative;
+            padding: 3px;
+            overflow: hidden;
+        }
+        .animated-border-glow::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            border-radius: inherit;
+            background: conic-gradient(from 180deg, #a855f7, #e9d5ff, #6b21a8, #a855f7);
+            animation: rotate 4s linear infinite;
+        }
+        .animated-border-glow > * { position: relative; z-index: 1; }
+        .fade-in-up { opacity: 0; animation: fadeInUp 0.6s ease-out forwards; }
+        .modal-content { transition: all 300ms cubic-bezier(0.34, 1.56, 0.64, 1); }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-purple-950 via-purple-900 to-slate-950 flex items-center justify-center min-h-screen sm:p-4">
+
+    <!-- TARJETA -->
+    <div class="w-full max-w-sm bg-purple-900/60 backdrop-blur-md sm:rounded-3xl sm:shadow-2xl border border-purple-500/30 p-6 md:p-8 relative overflow-hidden text-white">
+        
+        <!-- Elementos decorativos -->
+        <div class="absolute -top-12 -right-12 w-32 h-32 bg-purple-500/20 rounded-full blur-2xl pointer-events-none"></div>
+        <div class="absolute -bottom-12 -left-12 w-32 h-32 bg-fuchsia-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+        <header class="flex flex-col items-center text-center relative z-10">
+            <!-- ILUSTRACIÓN FLOR DE LOTO -->
+            <div class="relative fade-in-up w-32 h-32 flex items-center justify-center" style="animation-delay: 100ms;">
+                <div class="w-full h-full rounded-full animated-border-glow shadow-xl shadow-purple-950/50">
+                    <div class="w-full h-full rounded-full bg-purple-950 flex items-center justify-center p-5">
+                        <svg class="w-full h-full text-purple-300 drop-shadow-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 3c-2.5 3.5-3 6.5-3 9 0 3 2 5 3 5s3-2 3-5c0-2.5-.5-5.5-3-9z"/>
+                            <path d="M12 17c-2 0-5-1-7-4 0 4 3 7 7 7s7-3 7-7c-2 3-5 4-7 4z"/>
+                            <path d="M12 17c-4 0-8-2-10-6 1 5 5 8 10 8s9-3 10-8c-2 4-6 6-10 6z"/>
+                        </svg>
+                    </div>
+                </div>
+                <span class="absolute bottom-1 right-1 bg-purple-600 p-1.5 rounded-full border-2 border-purple-900 shadow-md z-10 text-purple-100" title="Verificado">
+                    <i data-lucide="sparkles" class="w-4 h-4"></i>
+                </span>
+            </div>
+
+            <h1 class="text-3xl font-extrabold text-purple-100 mt-5 fade-in-up tracking-tight drop-shadow-sm" style="animation-delay: 200ms;">Reiki para Vivir</h1>
+            <p class="text-purple-300 font-semibold text-sm fade-in-up mt-1" style="animation-delay: 300ms;">Terapias Holísticas & Sanación Energética</p>
+            <p class="text-purple-200/80 mt-3 text-sm max-w-xs leading-relaxed fade-in-up" style="animation-delay: 400ms;">
+                Acompañando tu bienestar armónico a través de sesiones energéticas, oráculos y formaciones holísticas.
+            </p>
+        </header>
+
+        <!-- REDES SOCIALES -->
+        <section class="flex justify-center gap-3 mt-5 fade-in-up relative z-10" style="animation-delay: 500ms;">
+            <a href="https://instagram.com/reikiparavivir" target="_blank" rel="noopener noreferrer" class="p-3 bg-purple-950/60 text-purple-200 rounded-2xl border border-purple-700/50 hover:bg-purple-600 hover:text-white transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5" aria-label="Instagram">
+                <i data-lucide="instagram" class="w-5 h-5"></i>
+            </a>
+            <a href="https://facebook.com/reikiparavivir" target="_blank" rel="noopener noreferrer" class="p-3 bg-purple-950/60 text-purple-200 rounded-2xl border border-purple-700/50 hover:bg-purple-600 hover:text-white transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5" aria-label="Facebook">
+                <i data-lucide="facebook" class="w-5 h-5"></i>
+            </a>
+            <a href="https://pinterest.com/reikiparavivir" target="_blank" rel="noopener noreferrer" class="p-3 bg-purple-950/60 text-purple-200 rounded-2xl border border-purple-700/50 hover:bg-purple-600 hover:text-white transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5" aria-label="Pinterest">
+                <i data-lucide="pin" class="w-5 h-5"></i>
+            </a>
+            <a href="https://wa.me/541134317427" target="_blank" rel="noopener noreferrer" class="p-3 bg-purple-950/60 text-purple-200 rounded-2xl border border-purple-700/50 hover:bg-purple-600 hover:text-white transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5" aria-label="WhatsApp">
+                <i data-lucide="message-circle" class="w-5 h-5"></i>
+            </a>
+        </section>
+
+        <!-- CONTACTO -->
+        <main class="mt-6 space-y-2.5 fade-in-up relative z-10" style="animation-delay: 600ms;">
+            <a href="https://wa.me/541134317427" target="_blank" class="flex items-center p-3 bg-purple-950/40 rounded-xl hover:bg-purple-800/40 border border-purple-700/30 transition-all duration-200 group">
+                <div class="p-2 bg-purple-800/50 text-purple-200 rounded-lg group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                    <i data-lucide="phone" class="w-4 h-4"></i>
+                </div>
+                <span class="ml-3.5 text-purple-100 text-sm font-medium group-hover:text-purple-200">+54 11 3431-7427</span>
+            </a>
+            <a href="mailto:karinadoloresalmiron@gmail.com" class="flex items-center p-3 bg-purple-950/40 rounded-xl hover:bg-purple-800/40 border border-purple-700/30 transition-all duration-200 group">
+                <div class="p-2 bg-purple-800/50 text-purple-200 rounded-lg group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                </div>
+                <span class="ml-3.5 text-purple-100 text-sm font-medium group-hover:text-purple-200 truncate">karinadoloresalmiron@gmail.com</span>
+            </a>
+        </main>
+
+        <!-- BOTONES PRINCIPALES -->
+        <footer class="mt-7 flex flex-col gap-3 fade-in-up relative z-10" style="animation-delay: 700ms;">
+            <button id="services-btn" class="flex items-center justify-center w-full bg-purple-950/80 text-purple-200 font-semibold py-3 px-4 rounded-xl border-2 border-purple-500/60 hover:bg-purple-600 hover:text-white hover:border-purple-600 transition-all duration-200 hover:scale-[1.02] shadow-sm">
+                <i data-lucide="flower2" class="w-5 h-5 mr-2.5"></i>Sesiones y Formaciones
+            </button>
+            <button id="save-contact-btn" class="flex items-center justify-center w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold py-3 px-4 rounded-xl hover:from-purple-500 hover:to-indigo-500 transition-all duration-200 hover:scale-[1.02] shadow-lg shadow-purple-600/30">
+                <i data-lucide="user-plus" class="w-5 h-5 mr-2.5"></i>Guardar Contacto
+            </button>
+            <button id="show-qr-btn" class="flex items-center justify-center w-full bg-purple-950/50 text-purple-200 font-semibold py-3 px-4 rounded-xl hover:bg-purple-800/60 transition-all duration-200 hover:scale-[1.02] shadow-md border border-purple-700/40">
+                 <i data-lucide="qr-code" class="w-5 h-5 mr-2.5"></i>Compartir / Código QR
+            </button>
+            <button id="show-instructions-btn" class="text-center w-full text-purple-300/70 font-medium text-xs py-1.5 hover:text-purple-200 transition-colors mt-1">
+                ¿Cómo guardar en la pantalla de inicio?
+            </button>
+        </footer>
+    </div>
+
+    <!-- MODAL SERVICIOS Y FORMACIONES -->
+    <div id="services-modal" class="hidden fixed inset-0 bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4 z-50">
+        <div class="modal-content bg-purple-950 rounded-3xl shadow-2xl max-w-lg w-full relative scale-95 opacity-0 flex flex-col border border-purple-500/40 overflow-hidden text-white" style="height: 85vh; max-height: 680px;">
+            <div class="p-5 bg-gradient-to-r from-purple-950 via-purple-900 to-purple-950 text-white relative flex-shrink-0 text-center border-b border-purple-700/50">
+                <h2 class="text-xl font-bold text-purple-100">Sesiones & Formaciones</h2>
+                <p class="text-purple-300 text-xs mt-1">Servicios holísticos y capacitación energética</p>
+                <button id="close-services-modal-btn" class="absolute top-4 right-4 text-purple-300 hover:text-white p-1 rounded-full hover:bg-white/10 transition-colors">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <div class="overflow-y-auto p-5 space-y-6">
+                <!-- SESIONES -->
+                <div>
+                    <h3 class="text-xs font-bold text-purple-300 uppercase tracking-wider mb-3 flex items-center gap-1.5">
+                        <i data-lucide="sparkles" class="w-4 h-4 text-purple-400"></i>
+                        <span>Sesiones Holísticas</span>
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="bg-purple-900/40 p-4 rounded-2xl shadow-sm border border-purple-700/30 flex flex-col justify-between hover:border-purple-500/50 transition-colors">
+                            <div>
+                                <h4 class="font-bold text-purple-100 text-base">Lectura Oracular</h4>
+                                <p class="text-purple-300/80 text-xs mt-1">Orientación y claridad espiritual a través de la interpretación de oráculos.</p>
+                            </div>
+                            <a href="https://wa.me/541134317427?text=Hola,%20quisiera%20reservar%20una%20Lectura%20Oracular%20con%20Reiki%20para%20Vivir." target="_blank" class="text-xs font-semibold text-purple-300 hover:text-purple-100 mt-3 inline-flex items-center gap-1">
+                                Reservar turno <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+
+                        <div class="bg-purple-900/40 p-4 rounded-2xl shadow-sm border border-purple-700/30 flex flex-col justify-between hover:border-purple-500/50 transition-colors">
+                            <div>
+                                <h4 class="font-bold text-purple-100 text-base">Limpieza Energética Personal</h4>
+                                <p class="text-purple-300/80 text-xs mt-1">Armonización de chakras y liberación de bloqueos o cargas sutiles.</p>
+                            </div>
+                            <a href="https://wa.me/541134317427?text=Hola,%20me%20interesa%20una%20Limpieza%20Energ%C3%A9tica%20Personal." target="_blank" class="text-xs font-semibold text-purple-300 hover:text-purple-100 mt-3 inline-flex items-center gap-1">
+                                Reservar turno <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+
+                        <div class="bg-purple-900/40 p-4 rounded-2xl shadow-sm border border-purple-700/30 flex flex-col justify-between hover:border-purple-500/50 transition-colors">
+                            <div>
+                                <h4 class="font-bold text-purple-100 text-base">Limpieza Energética Casas o Negocios</h4>
+                                <p class="text-purple-300/80 text-xs mt-1">Purificación y elevación vibratoria de espacios residenciales o comerciales.</p>
+                            </div>
+                            <a href="https://wa.me/541134317427?text=Hola,%20quisiera%20consultar%20por%20Limpieza%20Energ%C3%A9tica%20de%20Espacios." target="_blank" class="text-xs font-semibold text-purple-300 hover:text-purple-100 mt-3 inline-flex items-center gap-1">
+                                Solicitar información <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FORMACIONES -->
+                <div>
+                    <h3 class="text-xs font-bold text-purple-300 uppercase tracking-wider mb-3 flex items-center gap-1.5">
+                        <i data-lucide="book-open" class="w-4 h-4 text-purple-400"></i>
+                        <span>Formaciones & Cursos</span>
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="bg-purple-900/40 p-4 rounded-2xl shadow-sm border border-purple-700/30 flex flex-col justify-between hover:border-purple-500/50 transition-colors">
+                            <div>
+                                <h4 class="font-bold text-purple-100 text-base">Uso Terapéutico del Péndulo</h4>
+                                <p class="text-purple-300/80 text-xs mt-1">Aprende radiestesia práctica para autoconocimiento y sanación.</p>
+                            </div>
+                            <a href="https://wa.me/541134317427?text=Hola,%20quiero%20inscribirme%20al%20curso%20de%20Uso%20Terap%C3%A9utico%20del%20P%C3%A9ndulo." target="_blank" class="text-xs font-semibold text-purple-300 hover:text-purple-100 mt-3 inline-flex items-center gap-1">
+                                Más información e inscripción <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+
+                        <div class="bg-purple-900/40 p-4 rounded-2xl shadow-sm border border-purple-700/30 flex flex-col justify-between hover:border-purple-500/50 transition-colors">
+                            <div>
+                                <h4 class="font-bold text-purple-100 text-base">Reiki Primer Nivel</h4>
+                                <p class="text-purple-300/80 text-xs mt-1">Iniciación al canal energético del Reiki Usui. Autotratamiento y primeros pasos.</p>
+                            </div>
+                            <a href="https://wa.me/541134317427?text=Hola,%20me%20interesa%20la%20formaci%C3%B3n%20Reiki%20Primer%20Nivel." target="_blank" class="text-xs font-semibold text-purple-300 hover:text-purple-100 mt-3 inline-flex items-center gap-1">
+                                Más información e inscripción <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+
+                        <div class="bg-purple-900/40 p-4 rounded-2xl shadow-sm border border-purple-700/30 flex flex-col justify-between hover:border-purple-500/50 transition-colors">
+                            <div>
+                                <h4 class="font-bold text-purple-100 text-base">Mesa Cuántica</h4>
+                                <p class="text-purple-300/80 text-xs mt-1">Herramienta holística avanzada de reprogramación y armonización integral.</p>
+                            </div>
+                            <a href="https://wa.me/541134317427?text=Hola,%20quisiera%20info%20de%20la%20formaci%C3%B3n%20Mesa%20Cu%C3%A1ntica." target="_blank" class="text-xs font-semibold text-purple-300 hover:text-purple-100 mt-3 inline-flex items-center gap-1">
+                                Más información e inscripción <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-4 border-t border-purple-700/50 bg-purple-950 flex-shrink-0">
+                 <a href="https://wa.me/541134317427?text=Hola,%20quisiera%20consultar%20por%20los%20servicios%20de%20Reiki%20para%20Vivir." target="_blank" class="w-full flex items-center justify-center bg-purple-600 text-white font-bold py-3 px-4 rounded-xl hover:bg-purple-500 transition-all duration-200 shadow-md">
+                     <i data-lucide="message-circle" class="w-5 h-5 mr-2"></i>Consultar por WhatsApp
+                 </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL INSTALACION PWA -->
+    <div id="install-instructions-modal" class="hidden fixed inset-0 bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4 z-50">
+        <div class="modal-content bg-purple-950 rounded-3xl shadow-2xl max-w-lg w-full relative scale-95 opacity-0 overflow-hidden border border-purple-500/40 text-white">
+            <div class="bg-purple-900/60 p-5 text-center relative border-b border-purple-700/50">
+                <h2 class="text-xl font-bold text-purple-100">Instalar Aplicación</h2>
+                <p class="text-purple-300 text-xs mt-0.5">Accede directamente desde el menú de tu teléfono</p>
+                <button id="close-instructions-modal-btn" class="absolute top-4 right-4 text-purple-300 hover:text-white">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            <div class="p-5 space-y-4">
+                <div class="bg-purple-900/40 p-4 rounded-2xl border border-purple-700/30">
+                    <h3 class="text-sm font-bold text-purple-200 mb-2 flex items-center">
+                        <i data-lucide="apple" class="w-4 h-4 mr-2"></i>
+                        <span>iPhone / iPad (Safari)</span>
+                    </h3>
+                    <ol class="space-y-2 text-purple-300/80 text-xs leading-relaxed">
+                        <li class="flex items-start"><span class="font-bold text-purple-200 mr-2">1.</span><span>Toca el botón <strong>Compartir</strong> <i data-lucide="share" class="inline-block w-3.5 h-3.5 -mt-0.5 text-purple-200"></i> en la barra inferior.</span></li>
+                        <li class="flex items-start"><span class="font-bold text-purple-200 mr-2">2.</span><span>Desliza y selecciona <strong>"Agregar a inicio"</strong>.</span></li>
+                        <li class="flex items-start"><span class="font-bold text-purple-200 mr-2">3.</span><span>Toca <strong>"Agregar"</strong> en la esquina superior derecha.</span></li>
+                    </ol>
+                </div>
+                <div class="bg-purple-900/40 p-4 rounded-2xl border border-purple-700/30">
+                    <h3 class="text-sm font-bold text-purple-200 mb-2 flex items-center">
+                        <i data-lucide="smartphone" class="w-4 h-4 mr-2"></i>
+                        <span>Android (Chrome / Navegadores)</span>
+                    </h3>
+                    <ol class="space-y-2 text-purple-300/80 text-xs leading-relaxed">
+                        <li class="flex items-start"><span class="font-bold text-purple-200 mr-2">1.</span><span>Toca el menú de <strong>tres puntos</strong> <i data-lucide="more-vertical" class="inline-block w-3.5 h-3.5 -mt-0.5 text-purple-200"></i>.</span></li>
+                        <li class="flex items-start"><span class="font-bold text-purple-200 mr-2">2.</span><span>Selecciona <strong>"Instalar aplicación"</strong> o "Añadir a pantalla principal".</span></li>
+                        <li class="flex items-start"><span class="font-bold text-purple-200 mr-2">3.</span><span>Confirma la instalación en la ventana emergente.</span></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL QR -->
+    <div id="qr-modal" class="hidden fixed inset-0 bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4 z-50">
+        <div class="modal-content bg-purple-950 rounded-3xl shadow-2xl max-w-xs w-full relative text-center scale-95 opacity-0 overflow-hidden border border-purple-500/40 text-white">
+            <div class="bg-purple-900/60 p-5 relative border-b border-purple-700/50">
+                <h2 class="text-lg font-bold text-purple-100">Compartir Contacto</h2>
+                <button id="close-qr-modal-btn" class="absolute top-4 right-4 text-purple-300 hover:text-white">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            <div class="p-6">
+                <div id="qrcode-container" class="flex justify-center p-3 bg-white rounded-2xl border border-purple-300 shadow-inner">
+                    <div id="qrcode"></div>
+                </div>
+                <p class="text-purple-300/80 mt-4 text-xs leading-relaxed">Escanea este código QR con otro dispositivo para acceder a esta tarjeta.</p>
+                <button id="native-share-btn" class="mt-5 w-full flex items-center justify-center bg-purple-600 text-white font-bold py-2.5 px-4 rounded-xl hover:bg-purple-500 transition-all duration-200 shadow-md text-sm">
+                    <i data-lucide="share-2" class="w-4 h-4 mr-2"></i>Compartir Tarjeta
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+
+            // PWA Manifest
+            const manifest = {
+                "name": "Reiki para Vivir",
+                "short_name": "Reiki para Vivir",
+                "start_url": ".",
+                "display": "standalone",
+                "background_color": "#3b0764",
+                "theme_color": "#7e22ce",
+                "description": "Tarjeta Digital de Reiki para Vivir - Terapias Holísticas"
+            };
+            const manifestBlob = new Blob([JSON.stringify(manifest)], { type: 'application/json' });
+            const manifestUrl = URL.createObjectURL(manifestBlob);
+            const linkManifest = document.createElement('link');
+            linkManifest.rel = 'manifest';
+            linkManifest.href = manifestUrl;
+            document.head.appendChild(linkManifest);
+
+            if ('serviceWorker' in navigator) {
+                const swContent = `self.addEventListener('install', (e) => console.log('SW: Instalado')); self.addEventListener('fetch', (e) => e.respondWith(fetch(e.request)));`;
+                const swBlob = new Blob([swContent], { type: 'application/javascript' });
+                const swUrl = URL.createObjectURL(swBlob);
+                navigator.serviceWorker.register(swUrl).catch(err => console.log('SW Error:', err));
+            }
+
+            // Modales
+            const setupModal = (modalId, openBtnId, closeBtnId) => {
+                const modal = document.getElementById(modalId);
+                const openBtn = document.getElementById(openBtnId);
+                const closeBtn = modal.querySelector(closeBtnId);
+                const modalContent = modal.querySelector('.modal-content');
+
+                const open = () => {
+                    modal.classList.remove('hidden');
+                    setTimeout(() => { modalContent.classList.remove('scale-95', 'opacity-0'); }, 10);
+                };
+                const close = () => {
+                    modalContent.classList.add('scale-95', 'opacity-0');
+                    setTimeout(() => modal.classList.add('hidden'), 300);
+                };
+
+                if (openBtn) openBtn.addEventListener('click', open);
+                if (closeBtn) closeBtn.addEventListener('click', close);
+                modal.addEventListener('click', (e) => e.target === modal && close());
+            };
+
+            setupModal('install-instructions-modal', 'show-instructions-btn', '#close-instructions-modal-btn');
+            setupModal('qr-modal', 'show-qr-btn', '#close-qr-modal-btn');
+            setupModal('services-modal', 'services-btn', '#close-services-modal-btn');
+
+            // QR Code
+            new QRCode(document.getElementById("qrcode"), {
+                text: window.location.href,
+                width: 180,
+                height: 180,
+                colorDark: "#3b0764",
+                colorLight: "#ffffff",
+                correctLevel: QRCode.CorrectLevel.H
+            });
+
+            // Native Share
+            const nativeShareBtn = document.getElementById('native-share-btn');
+            if (navigator.share) {
+                nativeShareBtn.addEventListener('click', async () => {
+                    try {
+                        await navigator.share({
+                            title: 'Reiki para Vivir',
+                            text: 'Contacto de Reiki para Vivir - Terapias Holísticas',
+                            url: window.location.href,
+                        });
+                    } catch (err) {}
+                });
+            } else {
+                nativeShareBtn.style.display = 'none';
+            }
+
+            // Descargar vCard
+            document.getElementById('save-contact-btn').addEventListener('click', () => {
+                const vCardData = `BEGIN:VCARD\nVERSION:3.0\nFN:Reiki para Vivir\nORG:Reiki para Vivir\nTITLE:Terapias Holísticas\nTEL;TYPE=CELL,VOICE:+541134317427\nEMAIL:karinadoloresalmiron@gmail.com\nURL;TYPE=Instagram:https://instagram.com/reikiparavivir\nNOTE:Reiki para Vivir - Sesiones y Formaciones Holísticas\nEND:VCARD`;
+
+                const blob = new Blob([vCardData], { type: 'text/vcard;charset=utf-8' });
+                const url = URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = 'Reiki_Para_Vivir.vcf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                URL.revokeObjectURL(url);
+            });
+        });
+    </script>
+</body>
+</html>
